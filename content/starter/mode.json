@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "id": "range_survival_example",
+  "name": "Range Survival Example",
+  "level_id": "training_range",
+  "intermission_seconds": 12,
+  "repeat_waves": true,
+  "waves": [
+    {
+      "groups": [
+        {
+          "enemy_id": "training_opponent",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "groups": [
+        {
+          "enemy_id": "training_opponent",
+          "count": 6
+        }
+      ]
+    }
+  ]
+}

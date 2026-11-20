@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Open FPS Sandbox enemy v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 48,
+      "pattern": "^[a-z][a-z0-9_]{0,47}(?![\\s\\S])"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 72,
+      "pattern": "^[^\\x00-\\x1F\\x7F]+(?![\\s\\S])"
+    },
+    "health": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 10000
+    },
+    "move_speed_mps": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 20
+    },
+    "weapon_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 48,
+      "pattern": "^[a-z][a-z0-9_]{0,47}(?![\\s\\S])"
+    },
+    "behavior": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 10,
+      "enum": [
+        "stationary",
+        "advance"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "name",
+    "health",
+    "move_speed_mps",
+    "weapon_id",
+    "behavior"
+  ],
+  "additionalProperties": false
+}

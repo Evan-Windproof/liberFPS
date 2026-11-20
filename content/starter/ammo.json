@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "id": "training_round",
+  "name": "Training Round",
+  "projectile_speed_mps": 260,
+  "projectile_lifetime_seconds": 2,
+  "damage": 10
+}

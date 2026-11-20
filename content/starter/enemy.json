@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "id": "training_opponent",
+  "name": "Training Opponent",
+  "health": 75,
+  "move_speed_mps": 3.2,
+  "weapon_id": "training_carbine",
+  "behavior": "stationary"
+}

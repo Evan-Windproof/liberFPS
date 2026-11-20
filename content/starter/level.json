@@ -1,0 +1,1121 @@
+{
+  "schema_version": 1,
+  "id": "training_range",
+  "name": "Training Range",
+  "spawn": {
+    "position": [
+      0,
+      0.08,
+      18
+    ],
+    "yaw_degrees": 0
+  },
+  "blocks": [
+    {
+      "center": [
+        0,
+        -0.4,
+        0
+      ],
+      "size": [
+        36,
+        0.8,
+        44
+      ],
+      "surface": "asphalt",
+      "solid": true
+    },
+    {
+      "center": [
+        -18,
+        1.75,
+        0
+      ],
+      "size": [
+        0.65,
+        3.5,
+        44
+      ],
+      "surface": "concrete",
+      "solid": true
+    },
+    {
+      "center": [
+        -18,
+        3.52,
+        0
+      ],
+      "size": [
+        0.75,
+        0.12,
+        44.5
+      ],
+      "surface": "steel",
+      "solid": false
+    },
+    {
+      "center": [
+        18,
+        1.75,
+        0
+      ],
+      "size": [
+        0.65,
+        3.5,
+        44
+      ],
+      "surface": "concrete",
+      "solid": true
+    },
+    {
+      "center": [
+        18,
+        3.52,
+        0
+      ],
+      "size": [
+        0.75,
+        0.12,
+        44.5
+      ],
+      "surface": "steel",
+      "solid": false
+    },
+    {
+      "center": [
+        0,
+        1.75,
+        -22
+      ],
+      "size": [
+        36,
+        3.5,
+        0.65
+      ],
+      "surface": "concrete",
+      "solid": true
+    },
+    {
+      "center": [
+        0,
+        3.52,
+        -22
+      ],
+      "size": [
+        36,
+        0.12,
+        0.75
+      ],
+      "surface": "steel",
+      "solid": false
+    },
+    {
+      "center": [
+        0,
+        1.75,
+        22
+      ],
+      "size": [
+        36,
+        3.5,
+        0.65
+      ],
+      "surface": "concrete",
+      "solid": true
+    },
+    {
+      "center": [
+        0,
+        3.52,
+        22
+      ],
+      "size": [
+        36,
+        0.12,
+        0.75
+      ],
+      "surface": "steel",
+      "solid": false
+    },
+    {
+      "center": [
+        0,
+        0.01,
+        -16
+      ],
+      "size": [
+        0.11,
+        0.02,
+        1.8
+      ],
+      "surface": "white",
+      "solid": false
+    },
+    {
+      "center": [
+        0,
+        0.01,
+        -12
+      ],
+      "size": [
+        0.11,
+        0.02,
+        1.8
+      ],
+      "surface": "white",
+      "solid": false
+    },
+    {
+      "center": [
+        0,
+        0.01,
+        -8
+      ],
+      "size": [
+        0.11,
+        0.02,
+        1.8
+      ],
+      "surface": "white",
+      "solid": false
+    },
+    {
+      "center": [
+        0,
+        0.01,
+        -4
+      ],
+      "size": [
+        0.11,
+        0.02,
+        1.8
+      ],
+      "surface": "white",
+      "solid": false
+    },
+    {
+      "center": [
+        0,
+        0.01,
+        0
+      ],
+      "size": [
+        0.11,
+        0.02,
+        1.8
+      ],
+      "surface": "white",
+      "solid": false
+    },
+    {
+      "center": [
+        0,
+        0.01,
+        4
+      ],
+      "size": [
+        0.11,
+        0.02,
+        1.8
+      ],
+      "surface": "white",
+      "solid": false
+    },
+    {
+      "center": [
+        0,
+        0.01,
+        8
+      ],
+      "size": [
+        0.11,
+        0.02,
+        1.8
+      ],
+      "surface": "white",
+      "solid": false
+    },
+    {
+      "center": [
+        0,
+        0.01,
+        12
+      ],
+      "size": [
+        0.11,
+        0.02,
+        1.8
+      ],
+      "surface": "white",
+      "solid": false
+    },
+    {
+      "center": [
+        0,
+        0.01,
+        16
+      ],
+      "size": [
+        0.11,
+        0.02,
+        1.8
+      ],
+      "surface": "white",
+      "solid": false
+    },
+    {
+      "center": [
+        -3.5,
+        0.012,
+        0
+      ],
+      "size": [
+        0.1,
+        0.023,
+        36
+      ],
+      "surface": "amber",
+      "solid": false
+    },
+    {
+      "center": [
+        3.5,
+        0.012,
+        0
+      ],
+      "size": [
+        0.1,
+        0.023,
+        36
+      ],
+      "surface": "amber",
+      "solid": false
+    },
+    {
+      "center": [
+        0,
+        0.014,
+        16
+      ],
+      "size": [
+        7,
+        0.024,
+        0.16
+      ],
+      "surface": "amber",
+      "solid": false
+    },
+    {
+      "center": [
+        -11,
+        0.1,
+        11.5
+      ],
+      "size": [
+        8,
+        0.2,
+        10
+      ],
+      "surface": "concrete",
+      "solid": true
+    },
+    {
+      "center": [
+        -11,
+        3.2,
+        11.5
+      ],
+      "size": [
+        8,
+        0.25,
+        9
+      ],
+      "surface": "olive",
+      "solid": true
+    },
+    {
+      "center": [
+        -14.4,
+        1.6,
+        8
+      ],
+      "size": [
+        0.25,
+        3.2,
+        0.25
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        -14.4,
+        1.6,
+        15
+      ],
+      "size": [
+        0.25,
+        3.2,
+        0.25
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        -7.6,
+        1.6,
+        8
+      ],
+      "size": [
+        0.25,
+        3.2,
+        0.25
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        -7.6,
+        1.6,
+        15
+      ],
+      "size": [
+        0.25,
+        3.2,
+        0.25
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        -11,
+        1.5,
+        15.7
+      ],
+      "size": [
+        6.7,
+        2.9,
+        0.25
+      ],
+      "surface": "olive",
+      "solid": true
+    },
+    {
+      "center": [
+        -11,
+        0.66,
+        9.1
+      ],
+      "size": [
+        2.7,
+        0.92,
+        1.5
+      ],
+      "surface": "sand",
+      "solid": true
+    },
+    {
+      "center": [
+        -11,
+        1.14,
+        9.1
+      ],
+      "size": [
+        2.76,
+        0.09,
+        1.56
+      ],
+      "surface": "steel",
+      "solid": false
+    },
+    {
+      "center": [
+        11,
+        0.1,
+        11.5
+      ],
+      "size": [
+        8,
+        0.2,
+        10
+      ],
+      "surface": "concrete",
+      "solid": true
+    },
+    {
+      "center": [
+        11,
+        3.2,
+        11.5
+      ],
+      "size": [
+        8,
+        0.25,
+        9
+      ],
+      "surface": "olive",
+      "solid": true
+    },
+    {
+      "center": [
+        7.6,
+        1.6,
+        8
+      ],
+      "size": [
+        0.25,
+        3.2,
+        0.25
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        7.6,
+        1.6,
+        15
+      ],
+      "size": [
+        0.25,
+        3.2,
+        0.25
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        14.4,
+        1.6,
+        8
+      ],
+      "size": [
+        0.25,
+        3.2,
+        0.25
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        14.4,
+        1.6,
+        15
+      ],
+      "size": [
+        0.25,
+        3.2,
+        0.25
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        11,
+        1.5,
+        15.7
+      ],
+      "size": [
+        6.7,
+        2.9,
+        0.25
+      ],
+      "surface": "olive",
+      "solid": true
+    },
+    {
+      "center": [
+        11,
+        0.66,
+        9.1
+      ],
+      "size": [
+        2.7,
+        0.92,
+        1.5
+      ],
+      "surface": "sand",
+      "solid": true
+    },
+    {
+      "center": [
+        11,
+        1.14,
+        9.1
+      ],
+      "size": [
+        2.76,
+        0.09,
+        1.56
+      ],
+      "surface": "steel",
+      "solid": false
+    },
+    {
+      "center": [
+        -8,
+        0.65,
+        1
+      ],
+      "size": [
+        4.5,
+        1.3,
+        0.7
+      ],
+      "surface": "concrete",
+      "solid": true
+    },
+    {
+      "center": [
+        -8,
+        1.32,
+        1
+      ],
+      "size": [
+        4.55,
+        0.07,
+        0.76
+      ],
+      "surface": "amber",
+      "solid": false
+    },
+    {
+      "center": [
+        8,
+        0.65,
+        -2
+      ],
+      "size": [
+        4.5,
+        1.3,
+        0.7
+      ],
+      "surface": "concrete",
+      "solid": true
+    },
+    {
+      "center": [
+        8,
+        1.32,
+        -2
+      ],
+      "size": [
+        4.55,
+        0.07,
+        0.76
+      ],
+      "surface": "amber",
+      "solid": false
+    },
+    {
+      "center": [
+        -11,
+        0.65,
+        -8
+      ],
+      "size": [
+        5,
+        1.3,
+        0.7
+      ],
+      "surface": "concrete",
+      "solid": true
+    },
+    {
+      "center": [
+        -11,
+        1.32,
+        -8
+      ],
+      "size": [
+        5.05,
+        0.07,
+        0.76
+      ],
+      "surface": "amber",
+      "solid": false
+    },
+    {
+      "center": [
+        9,
+        0.65,
+        -10
+      ],
+      "size": [
+        3.5,
+        1.3,
+        0.7
+      ],
+      "surface": "concrete",
+      "solid": true
+    },
+    {
+      "center": [
+        9,
+        1.32,
+        -10
+      ],
+      "size": [
+        3.55,
+        0.07,
+        0.76
+      ],
+      "surface": "amber",
+      "solid": false
+    },
+    {
+      "center": [
+        13.3,
+        0.18,
+        -10.8
+      ],
+      "size": [
+        3.8,
+        0.36,
+        1
+      ],
+      "surface": "concrete",
+      "solid": true
+    },
+    {
+      "center": [
+        13.3,
+        0.369,
+        -10.360000000000001
+      ],
+      "size": [
+        3.8,
+        0.016,
+        0.1
+      ],
+      "surface": "amber",
+      "solid": false
+    },
+    {
+      "center": [
+        13.3,
+        0.36,
+        -11.7
+      ],
+      "size": [
+        3.8,
+        0.72,
+        1
+      ],
+      "surface": "concrete",
+      "solid": true
+    },
+    {
+      "center": [
+        13.3,
+        0.729,
+        -11.26
+      ],
+      "size": [
+        3.8,
+        0.016,
+        0.1
+      ],
+      "surface": "amber",
+      "solid": false
+    },
+    {
+      "center": [
+        13.3,
+        0.54,
+        -13.5
+      ],
+      "size": [
+        3.8,
+        1.08,
+        2.9
+      ],
+      "surface": "concrete",
+      "solid": true
+    },
+    {
+      "center": [
+        13.3,
+        1.089,
+        -12.110000000000001
+      ],
+      "size": [
+        3.8,
+        0.016,
+        0.1
+      ],
+      "surface": "amber",
+      "solid": false
+    },
+    {
+      "center": [
+        0,
+        1.6,
+        -19.6
+      ],
+      "size": [
+        28,
+        3.2,
+        0.8
+      ],
+      "surface": "olive",
+      "solid": true
+    },
+    {
+      "center": [
+        -10,
+        0.12,
+        -16
+      ],
+      "size": [
+        1.45,
+        0.24,
+        0.9
+      ],
+      "surface": "sand",
+      "solid": true
+    },
+    {
+      "center": [
+        -10,
+        0.71,
+        -16
+      ],
+      "size": [
+        0.15,
+        1.04,
+        0.21
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        -10,
+        1.47,
+        -16
+      ],
+      "size": [
+        0.9,
+        0.96,
+        0.14
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        -10,
+        1.47,
+        -15.921
+      ],
+      "size": [
+        0.6,
+        0.63,
+        0.022
+      ],
+      "surface": "amber",
+      "solid": false
+    },
+    {
+      "center": [
+        -10,
+        1.47,
+        -15.906
+      ],
+      "size": [
+        0.24,
+        0.24,
+        0.02
+      ],
+      "surface": "white",
+      "solid": false
+    },
+    {
+      "center": [
+        -5,
+        0.12,
+        -16
+      ],
+      "size": [
+        1.45,
+        0.24,
+        0.9
+      ],
+      "surface": "sand",
+      "solid": true
+    },
+    {
+      "center": [
+        -5,
+        0.71,
+        -16
+      ],
+      "size": [
+        0.15,
+        1.04,
+        0.21
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        -5,
+        1.47,
+        -16
+      ],
+      "size": [
+        0.9,
+        0.96,
+        0.14
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        -5,
+        1.47,
+        -15.921
+      ],
+      "size": [
+        0.6,
+        0.63,
+        0.022
+      ],
+      "surface": "amber",
+      "solid": false
+    },
+    {
+      "center": [
+        -5,
+        1.47,
+        -15.906
+      ],
+      "size": [
+        0.24,
+        0.24,
+        0.02
+      ],
+      "surface": "white",
+      "solid": false
+    },
+    {
+      "center": [
+        0,
+        0.12,
+        -16
+      ],
+      "size": [
+        1.45,
+        0.24,
+        0.9
+      ],
+      "surface": "sand",
+      "solid": true
+    },
+    {
+      "center": [
+        0,
+        0.71,
+        -16
+      ],
+      "size": [
+        0.15,
+        1.04,
+        0.21
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        0,
+        1.47,
+        -16
+      ],
+      "size": [
+        0.9,
+        0.96,
+        0.14
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        0,
+        1.47,
+        -15.921
+      ],
+      "size": [
+        0.6,
+        0.63,
+        0.022
+      ],
+      "surface": "amber",
+      "solid": false
+    },
+    {
+      "center": [
+        0,
+        1.47,
+        -15.906
+      ],
+      "size": [
+        0.24,
+        0.24,
+        0.02
+      ],
+      "surface": "white",
+      "solid": false
+    },
+    {
+      "center": [
+        5,
+        0.12,
+        -16
+      ],
+      "size": [
+        1.45,
+        0.24,
+        0.9
+      ],
+      "surface": "sand",
+      "solid": true
+    },
+    {
+      "center": [
+        5,
+        0.71,
+        -16
+      ],
+      "size": [
+        0.15,
+        1.04,
+        0.21
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        5,
+        1.47,
+        -16
+      ],
+      "size": [
+        0.9,
+        0.96,
+        0.14
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        5,
+        1.47,
+        -15.921
+      ],
+      "size": [
+        0.6,
+        0.63,
+        0.022
+      ],
+      "surface": "amber",
+      "solid": false
+    },
+    {
+      "center": [
+        5,
+        1.47,
+        -15.906
+      ],
+      "size": [
+        0.24,
+        0.24,
+        0.02
+      ],
+      "surface": "white",
+      "solid": false
+    },
+    {
+      "center": [
+        10,
+        0.12,
+        -16
+      ],
+      "size": [
+        1.45,
+        0.24,
+        0.9
+      ],
+      "surface": "sand",
+      "solid": true
+    },
+    {
+      "center": [
+        10,
+        0.71,
+        -16
+      ],
+      "size": [
+        0.15,
+        1.04,
+        0.21
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        10,
+        1.47,
+        -16
+      ],
+      "size": [
+        0.9,
+        0.96,
+        0.14
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        10,
+        1.47,
+        -15.921
+      ],
+      "size": [
+        0.6,
+        0.63,
+        0.022
+      ],
+      "surface": "amber",
+      "solid": false
+    },
+    {
+      "center": [
+        10,
+        1.47,
+        -15.906
+      ],
+      "size": [
+        0.24,
+        0.24,
+        0.02
+      ],
+      "surface": "white",
+      "solid": false
+    }
+  ]
+}
