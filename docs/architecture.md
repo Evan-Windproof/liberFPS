@@ -1,16 +1,18 @@
-# Phase 1 architecture
+# Runtime architecture
 
-At startup, `scenes/main.tscn` creates the menu, camera, and lighting. Its coordinator in `src/app/main.gd` asks `ContentLoader` for the trusted bundled level path. A load failure disables entry and shows the error on the menu. A valid record goes to `LevelBuilder`, which maps blocks to box meshes and adds static bodies only for solid blocks. The coordinator puts the player at the validated spawn when play begins.
+At startup, `scenes/main.tscn` creates the menu, overview camera, and lighting. The coordinator in `src/app/main.gd` loads the bundled level and linked starter weapon and ammunition. A load failure disables arena entry and displays an error. A valid level goes to `LevelBuilder`, which creates solids, scenery, and training targets. Entering the range resets targets and spawns a fresh player and loadout.
 
-| Ownership | Phase 1 implementation | Future extension |
+| Ownership | Implementation | Future extension |
 | --- | --- | --- |
-| Application and UI | Main menu, arena session, pause and resume, focus-loss pause | Add playtest and package-selection entry points to the coordinator |
-| FPS movement | `scenes/player.tscn` and `src/player/player_controller.gd` own camera, input, capsule movement, and respawn | Attach loadout and health components to the player |
-| Weapons | `scenes/training_weapon.tscn` is a view-only mesh attached to the camera | Equip weapon instances from validated weapon and ammunition records |
-| Projectile and damage | Ammunition schema describes projectile tuning | Add gameplay components for projectile simulation and damage resolution |
-| Enemy and survival | Independent enemy and game-mode records | Instantiate enemies from validated presets and let a session controller schedule waves |
-| Level loading | `src/levels/level_builder.gd` turns a validated record into nodes | Extend the versioned format and reuse the builder for playtesting |
-| Validation and serialization | `src/content/content_loader.gd` parses, validates, and serializes records | Resolve package IDs in a catalog before starting a session |
-| In-game editor | Planned | Edit plain document data, validate it, and use the existing level builder and gameplay session for playtests |
+| Application and UI | `src/app/main.gd` manages session and pause state. `src/app/weapon_hud.gd` listens for ammo and hit signals. | Loadout selection and custom range sessions |
+| FPS movement and input | `src/player/player_controller.gd` owns movement, camera, and captured gameplay input. | Route weapon actions to the selected weapon |
+| Weapon state | `src/weapons/weapon_controller.gd` owns trigger state, fire cadence, reload timing, and ammunition counts. It receives a validated loadout and an aim node. | Use the same controller with a different aim node and input source |
+| Shot resolution | `src/combat/shot_resolver.gd` queries the physics world along the aim direction and dispatches damage to the first collider. | Introduce projectile travel using the same damage receiver |
+| Damage and targets | `src/combat/damageable.gd` owns health. `src/levels/training_target.gd` maps health changes to target visuals. | Attach the damage component to enemies or destructible props |
+| Viewmodel | `src/weapons/weapon_view.gd` animates the existing mesh from weapon signals. | Replace the model or improve animation independently of ballistics |
+| Content | `src/content/content_loader.gd` validates and serializes records and resolves a weapon's typed ammunition reference. | Index validated records in a catalog |
+| Editor, enemy AI, and survival | Enemy and game-mode records remain examples. | Reuse content validation and gameplay components as these systems are added |
 
-The scene tree pauses world processing while keeping the coordinator and UI responsive. Physics, input capture, and scene lifecycle are distinct from the content format. Godot scene and script loading is reserved for bundled game resources. Future user content should pass through the validator and a trusted factory before it can create nodes.
+The scene tree pauses world physics, weapon timers, and feedback while keeping the pause UI responsive. The player accepts weapon input only while the mouse is captured. Pause and capture loss clear pending fire and reload requests. An in-progress reload resumes with its remaining time, and automatic fire requires a fresh press after recapture. Holding automatic fire during an uninterrupted reload resumes firing after the reload completes. A semi-automatic press during cooldown or reload is discarded.
+
+The ray uses the camera transform before viewmodel recoil and tests the World and Damageable collision layers. It excludes the firing body's RID. A solid wall terminates the query. For damageable bodies, the resolver looks for a direct child named `Damageable` with the damage component script. Targets that reach zero health stay solid, change color, and stop taking damage. Re-entering the range restores them.

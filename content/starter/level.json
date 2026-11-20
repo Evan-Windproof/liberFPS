@@ -797,6 +797,120 @@
     },
     {
       "center": [
+        -5,
+        0.12,
+        -16
+      ],
+      "size": [
+        1.45,
+        0.24,
+        0.9
+      ],
+      "surface": "sand",
+      "solid": true
+    },
+    {
+      "center": [
+        -5,
+        0.71,
+        -16
+      ],
+      "size": [
+        0.15,
+        1.04,
+        0.21
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        0,
+        0.12,
+        -16
+      ],
+      "size": [
+        1.45,
+        0.24,
+        0.9
+      ],
+      "surface": "sand",
+      "solid": true
+    },
+    {
+      "center": [
+        0,
+        0.71,
+        -16
+      ],
+      "size": [
+        0.15,
+        1.04,
+        0.21
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        5,
+        0.12,
+        -16
+      ],
+      "size": [
+        1.45,
+        0.24,
+        0.9
+      ],
+      "surface": "sand",
+      "solid": true
+    },
+    {
+      "center": [
+        5,
+        0.71,
+        -16
+      ],
+      "size": [
+        0.15,
+        1.04,
+        0.21
+      ],
+      "surface": "steel",
+      "solid": true
+    },
+    {
+      "center": [
+        10,
+        0.12,
+        -16
+      ],
+      "size": [
+        1.45,
+        0.24,
+        0.9
+      ],
+      "surface": "sand",
+      "solid": true
+    },
+    {
+      "center": [
+        10,
+        0.71,
+        -16
+      ],
+      "size": [
+        0.15,
+        1.04,
+        0.21
+      ],
+      "surface": "steel",
+      "solid": true
+    }
+  ],
+  "targets": [
+    {
+      "center": [
         -10,
         1.47,
         -16
@@ -806,64 +920,7 @@
         0.96,
         0.14
       ],
-      "surface": "steel",
-      "solid": true
-    },
-    {
-      "center": [
-        -10,
-        1.47,
-        -15.921
-      ],
-      "size": [
-        0.6,
-        0.63,
-        0.022
-      ],
-      "surface": "amber",
-      "solid": false
-    },
-    {
-      "center": [
-        -10,
-        1.47,
-        -15.906
-      ],
-      "size": [
-        0.24,
-        0.24,
-        0.02
-      ],
-      "surface": "white",
-      "solid": false
-    },
-    {
-      "center": [
-        -5,
-        0.12,
-        -16
-      ],
-      "size": [
-        1.45,
-        0.24,
-        0.9
-      ],
-      "surface": "sand",
-      "solid": true
-    },
-    {
-      "center": [
-        -5,
-        0.71,
-        -16
-      ],
-      "size": [
-        0.15,
-        1.04,
-        0.21
-      ],
-      "surface": "steel",
-      "solid": true
+      "max_health": 30
     },
     {
       "center": [
@@ -876,64 +933,7 @@
         0.96,
         0.14
       ],
-      "surface": "steel",
-      "solid": true
-    },
-    {
-      "center": [
-        -5,
-        1.47,
-        -15.921
-      ],
-      "size": [
-        0.6,
-        0.63,
-        0.022
-      ],
-      "surface": "amber",
-      "solid": false
-    },
-    {
-      "center": [
-        -5,
-        1.47,
-        -15.906
-      ],
-      "size": [
-        0.24,
-        0.24,
-        0.02
-      ],
-      "surface": "white",
-      "solid": false
-    },
-    {
-      "center": [
-        0,
-        0.12,
-        -16
-      ],
-      "size": [
-        1.45,
-        0.24,
-        0.9
-      ],
-      "surface": "sand",
-      "solid": true
-    },
-    {
-      "center": [
-        0,
-        0.71,
-        -16
-      ],
-      "size": [
-        0.15,
-        1.04,
-        0.21
-      ],
-      "surface": "steel",
-      "solid": true
+      "max_health": 30
     },
     {
       "center": [
@@ -946,64 +946,7 @@
         0.96,
         0.14
       ],
-      "surface": "steel",
-      "solid": true
-    },
-    {
-      "center": [
-        0,
-        1.47,
-        -15.921
-      ],
-      "size": [
-        0.6,
-        0.63,
-        0.022
-      ],
-      "surface": "amber",
-      "solid": false
-    },
-    {
-      "center": [
-        0,
-        1.47,
-        -15.906
-      ],
-      "size": [
-        0.24,
-        0.24,
-        0.02
-      ],
-      "surface": "white",
-      "solid": false
-    },
-    {
-      "center": [
-        5,
-        0.12,
-        -16
-      ],
-      "size": [
-        1.45,
-        0.24,
-        0.9
-      ],
-      "surface": "sand",
-      "solid": true
-    },
-    {
-      "center": [
-        5,
-        0.71,
-        -16
-      ],
-      "size": [
-        0.15,
-        1.04,
-        0.21
-      ],
-      "surface": "steel",
-      "solid": true
+      "max_health": 30
     },
     {
       "center": [
@@ -1016,64 +959,7 @@
         0.96,
         0.14
       ],
-      "surface": "steel",
-      "solid": true
-    },
-    {
-      "center": [
-        5,
-        1.47,
-        -15.921
-      ],
-      "size": [
-        0.6,
-        0.63,
-        0.022
-      ],
-      "surface": "amber",
-      "solid": false
-    },
-    {
-      "center": [
-        5,
-        1.47,
-        -15.906
-      ],
-      "size": [
-        0.24,
-        0.24,
-        0.02
-      ],
-      "surface": "white",
-      "solid": false
-    },
-    {
-      "center": [
-        10,
-        0.12,
-        -16
-      ],
-      "size": [
-        1.45,
-        0.24,
-        0.9
-      ],
-      "surface": "sand",
-      "solid": true
-    },
-    {
-      "center": [
-        10,
-        0.71,
-        -16
-      ],
-      "size": [
-        0.15,
-        1.04,
-        0.21
-      ],
-      "surface": "steel",
-      "solid": true
+      "max_health": 30
     },
     {
       "center": [
@@ -1086,36 +972,7 @@
         0.96,
         0.14
       ],
-      "surface": "steel",
-      "solid": true
-    },
-    {
-      "center": [
-        10,
-        1.47,
-        -15.921
-      ],
-      "size": [
-        0.6,
-        0.63,
-        0.022
-      ],
-      "surface": "amber",
-      "solid": false
-    },
-    {
-      "center": [
-        10,
-        1.47,
-        -15.906
-      ],
-      "size": [
-        0.24,
-        0.24,
-        0.02
-      ],
-      "surface": "white",
-      "solid": false
+      "max_health": 30
     }
   ]
 }

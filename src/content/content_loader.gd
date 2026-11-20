@@ -27,6 +27,19 @@ func load_document(kind: String, path: String) -> Dictionary:
 		return _failure("Document must use valid UTF-8.")
 	return parse_document(kind, source)
 
+## Resolve a weapon's typed ammo ID against the supplied ammunition document.
+## The file paths are selected by trusted application code.
+func load_weapon_loadout(weapon_path: String, ammo_path: String) -> Dictionary:
+	var weapon := load_document("weapon", weapon_path)
+	if not weapon["ok"]:
+		return _failure("Weapon: " + weapon["error"])
+	var ammo := load_document("ammo", ammo_path)
+	if not ammo["ok"]:
+		return _failure("Ammunition: " + ammo["error"])
+	if weapon["data"]["ammo_id"] != ammo["data"]["id"]:
+		return _failure("Weapon references unknown ammunition ID '%s'." % weapon["data"]["ammo_id"])
+	return {"ok": true, "weapon": weapon["data"], "ammo": ammo["data"]}
+
 ## Return {ok, data} on success or {ok, error} on failure.
 func parse_document(kind: String, source: String) -> Dictionary:
 	var size := source.to_utf8_buffer().size()
@@ -73,7 +86,7 @@ func _validate(value: Variant, schema: Dictionary, path: String) -> String:
 		"object":
 			if not value is Dictionary:
 				return path + " must be an object."
-			for key: String in schema["required"]:
+			for key: String in schema.get("required", []):
 				if not value.has(key):
 					return path + "." + key + " is required."
 			for key: Variant in value:
@@ -133,6 +146,11 @@ func _validate_level(data: Dictionary) -> String:
 			if (bounds.position.x <= clearance.position.x and bounds.end.x >= clearance.end.x
 				and bounds.position.z <= clearance.position.z and bounds.end.z >= clearance.end.z):
 				supported = true
+	for target: Dictionary in data.get("targets", []):
+		var size := vector3(target["size"])
+		var bounds := AABB(vector3(target["center"]) - size * 0.5, size)
+		if bounds.intersects(clearance):
+			return "$.spawn intersects a training target."
 	if not supported:
 		return "$.spawn needs a solid floor under the player."
 	return ""
