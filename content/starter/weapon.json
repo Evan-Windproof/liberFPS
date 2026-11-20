@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "id": "training_carbine",
+  "name": "Training Carbine",
+  "ammo_id": "training_round",
+  "magazine_capacity": 24,
+  "rounds_per_minute": 420,
+  "reload_seconds": 2.0
+}

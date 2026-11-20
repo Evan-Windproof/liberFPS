@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
+set -euo pipefail
+
+tag=4.7.2-stable
+template_version=4.7.2.stable
+release="https://github.com/godotengine/godot-builds/releases/download/$tag"
+tool_dir="${LIBERFPS_TOOL_DIR:-/workspace/.liberfps-tools}"
+editor="Godot_v${tag}_linux.x86_64.zip"
+templates="Godot_v${tag}_export_templates.tpz"
+
+if [[ $(uname -s) != Linux || $(uname -m) != x86_64 ]]; then
+    echo "This installer requires Linux x86_64." >&2
+    exit 1
+fi
+if [[ $# -gt 1 || ( $# -eq 1 && $1 != --windows-template ) ]]; then
+    echo "Usage: $0 [--windows-template]" >&2
+    exit 1
+fi
+
+mkdir -p "$tool_dir"
+cd "$tool_dir"
+curl -fsSL --retry 2 "$release/SHA512-SUMS.txt" -o SHA512-SUMS.txt
+
+verified_download() {
+    local asset=$1
+    local checksum
+    checksum=$(awk -v asset="$asset" '$2 == asset { print }' SHA512-SUMS.txt)
+    [[ -n "$checksum" ]]
+    if [[ ! -f $asset ]]; then
+        curl -fsSL --retry 2 "$release/$asset" -o "$asset.part"
+        mv -- "$asset.part" "$asset"
+    fi
+    sha512sum --check <<< "$checksum"
+}
+
+verified_download "$editor"
+unzip -oq "$editor"
+if [[ $# -eq 1 ]]; then
+    verified_download "$templates"
+    destination="${XDG_DATA_HOME:-$PWD/data}/godot/export_templates/$template_version"
+    mkdir -p "$destination"
+    unzip -ojq "$templates" templates/windows_release_x86_64.exe templates/version.txt -d "$destination"
+fi

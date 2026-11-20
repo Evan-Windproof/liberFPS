@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Open FPS Sandbox level v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 48,
+      "pattern": "^[a-z][a-z0-9_]{0,47}(?![\\s\\S])"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 72,
+      "pattern": "^[^\\x00-\\x1F\\x7F]+(?![\\s\\S])"
+    },
+    "spawn": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": -256,
+            "maximum": 256
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "yaw_degrees": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        }
+      },
+      "required": [
+        "position",
+        "yaw_degrees"
+      ],
+      "additionalProperties": false
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "center": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "minimum": -256,
+              "maximum": 256
+            },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "size": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "minimum": 0.01,
+              "maximum": 256
+            },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "surface": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8,
+            "enum": [
+              "asphalt",
+              "concrete",
+              "olive",
+              "sand",
+              "steel",
+              "amber",
+              "white"
+            ]
+          },
+          "solid": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "center",
+          "size",
+          "surface",
+          "solid"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 256
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "name",
+    "spawn",
+    "blocks"
+  ],
+  "additionalProperties": false
+}
