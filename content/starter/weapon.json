@@ -5,5 +5,13 @@
   "ammo_id": "training_round",
   "magazine_capacity": 24,
   "rounds_per_minute": 420,
-  "reload_seconds": 2.0
+  "reload_seconds": 2.0,
+  "firing_mode": "auto",
+  "starting_reserve": 72,
+  "max_range_m": 80,
+  "recoil": {
+    "kick_m": 0.06,
+    "pitch_degrees": 5,
+    "recovery_seconds": 0.09
+  }
 }

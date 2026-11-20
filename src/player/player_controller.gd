@@ -1,6 +1,8 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 extends CharacterBody3D
 
+const WeaponController = preload("res://src/weapons/weapon_controller.gd")
+const WeaponView = preload("res://src/weapons/weapon_view.gd")
 const WALK_SPEED := 5.0
 const SPRINT_SPEED := 8.0
 const JUMP_SPEED := 5.3
@@ -10,9 +12,20 @@ const LOOK_SENSITIVITY := 0.0023
 const PITCH_LIMIT := deg_to_rad(88.0)
 
 @onready var view: Camera3D = $View
+@onready var weapon: WeaponController = $Weapon
+@onready var _weapon_view: WeaponView = $View/TrainingWeapon
+var _had_capture := false
 var _spawn_position: Vector3
 var _spawn_yaw: float
 var _grav: float = float(ProjectSettings.get_setting("physics/3d/default_gravity"))
+
+func _ready() -> void:
+	weapon.shot_fired.connect(_weapon_view.play_shot)
+	weapon.ammo_changed.connect(_weapon_view.update_reload)
+
+func equip_weapon(loadout: Dictionary) -> void:
+	_weapon_view.configure(loadout["weapon"].get("recoil", {}))
+	weapon.equip(loadout, view, get_rid())
 
 func set_spawn(feet: Vector3, yaw_degrees: float) -> void:
 	_spawn_position = feet
@@ -26,12 +39,24 @@ func reset_position() -> void:
 	velocity = Vector3.ZERO
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+		return
+	if event.is_action("fire_weapon"):
+		weapon.set_trigger(event.is_pressed())
+		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("reload_weapon") and not event.is_echo():
+		weapon.request_reload()
+		get_viewport().set_input_as_handled()
+	elif event is InputEventMouseMotion:
 		rotate_y(-event.screen_relative.x * LOOK_SENSITIVITY)
 		view.rotation.x = clampf(view.rotation.x - event.screen_relative.y * LOOK_SENSITIVITY,
 			-PITCH_LIMIT, PITCH_LIMIT)
 
 func _physics_process(delta: float) -> void:
+	var captured := Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
+	if _had_capture and not captured:
+		weapon.clear_input()
+	_had_capture = captured
 	var grounded := is_on_floor()
 	if not grounded:
 		velocity.y -= _grav * delta

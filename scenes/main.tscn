@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://src/app/main.gd" id="1"]
+
+[ext_resource type="Script" path="res://src/app/weapon_hud.gd" id="2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="SkyMaterial"]
 sky_top_color = Color(0.19, 0.37, 0.53, 1)
@@ -71,6 +73,71 @@ theme_override_colors/font_outline_color = Color(0.08, 0.10, 0.10, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 24
 text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WeaponHUD" type="Control" parent="UI"]
+visible = false
+process_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("2")
+
+[node name="Readout" type="VBoxContainer" parent="UI/WeaponHUD"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -310.0
+offset_top = -115.0
+offset_right = -32.0
+offset_bottom = -25.0
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="WeaponName" type="Label" parent="UI/WeaponHUD/Readout"]
+theme_override_colors/font_color = Color(0.95, 0.90, 0.77, 1)
+theme_override_colors/font_outline_color = Color(0.04, 0.06, 0.06, 1)
+theme_override_constants/outline_size = 5
+text_overrun_behavior = 3
+horizontal_alignment = 2
+
+[node name="Ammo" type="Label" parent="UI/WeaponHUD/Readout"]
+theme_override_colors/font_color = Color(0.98, 0.95, 0.86, 1)
+theme_override_colors/font_outline_color = Color(0.04, 0.06, 0.06, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 2
+
+[node name="Status" type="Label" parent="UI/WeaponHUD/Readout"]
+theme_override_colors/font_color = Color(1, 0.75, 0.32, 1)
+theme_override_colors/font_outline_color = Color(0.04, 0.06, 0.06, 1)
+theme_override_constants/outline_size = 5
+horizontal_alignment = 2
+
+[node name="HitConfirmation" type="Label" parent="UI/WeaponHUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -21.0
+offset_right = 18.0
+offset_bottom = 21.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.61, 0.2, 1)
+theme_override_colors/font_outline_color = Color(0.08, 0.10, 0.10, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 29
+text = "×"
 horizontal_alignment = 1
 vertical_alignment = 1
 

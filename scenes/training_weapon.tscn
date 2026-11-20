@@ -1,4 +1,17 @@
-[gd_scene load_steps=12 format=3]
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://src/weapons/weapon_view.gd" id="1"]
+
+[sub_resource type="StandardMaterial3D" id="Flash"]
+shading_mode = 0
+albedo_color = Color(1, 0.74, 0.3, 1)
+
+[sub_resource type="SphereMesh" id="FlashMesh"]
+material = SubResource("Flash")
+radius = 0.062
+height = 0.124
+radial_segments = 6
+rings = 3
 
 [sub_resource type="StandardMaterial3D" id="Body"]
 albedo_color = Color(0.12, 0.17, 0.14, 1)
@@ -45,6 +58,7 @@ material = SubResource("Accent")
 size = Vector3(0.027, 0.056, 0.04)
 
 [node name="TrainingWeapon" type="Node3D"]
+script = ExtResource("1")
 
 [node name="Receiver" type="MeshInstance3D" parent="."]
 position = Vector3(0, 0, 0)
@@ -85,3 +99,10 @@ mesh = SubResource("RearSight")
 position = Vector3(0, 0.065, -0.375)
 cast_shadow = 0
 mesh = SubResource("FrontSight")
+
+[node name="MuzzleFlash" type="MeshInstance3D" parent="."]
+visible = false
+position = Vector3(0, -0.008, -0.524)
+scale = Vector3(1, 1, 1.6)
+cast_shadow = 0
+mesh = SubResource("FlashMesh")

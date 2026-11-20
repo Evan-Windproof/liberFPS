@@ -2,6 +2,7 @@
 extends RefCounted
 
 const ContentLoader = preload("res://src/content/content_loader.gd")
+const TrainingTarget = preload("res://src/levels/training_target.gd")
 const PALETTE := {
 	"asphalt": Color("#494e4c"),
 	"concrete": Color("#8b928b"),
@@ -45,4 +46,12 @@ func build(data: Dictionary) -> Node3D:
 			visual.position = center
 			visual.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 			level.add_child(visual)
+	var targets: Array = data.get("targets", [])
+	for index: int in targets.size():
+		var record: Dictionary = targets[index]
+		var target := TrainingTarget.new()
+		target.name = "Target%d" % (index + 1)
+		target.position = ContentLoader.vector3(record["center"])
+		target.configure(ContentLoader.vector3(record["size"]), float(record["max_health"]))
+		level.add_child(target)
 	return level
